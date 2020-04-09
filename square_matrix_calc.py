@@ -1,6 +1,102 @@
 import sys
 import numpy
 
+# for copy and paste purpose
+# [
+#     Alabama,
+#     Arizona,
+#     Arkansas,
+#     California,
+#     Colorado,
+#     Connecticut,
+#     Delaware,
+#     Florida,
+#     Georgia,
+#     Hawaii,
+#     Idaho,
+#     Illinois,
+#     Indiana,
+#     Iowa,
+#     Kansas,
+#     Kentucky,
+#     Louisiana,
+#     Maine,
+#     Maryland,
+#     Massachusetts,
+#     Minnesota,
+#     Mississippi,
+#     Missouri,
+#     Nebraska,
+#     Nevada,
+#     New_Hampshire,
+#     New_Jersey,
+#     New_Mexico,
+#     New_York,
+#     North_Carolina,
+#     North_Dakota,
+#     Ohio,
+#     Oklahoma,
+#     Oregon,
+#     Pennsylvania,
+#     Rhode_Island,
+#     South_Carolina,
+#     Tennessee,
+#     Texas,
+#     Utah,
+#     Vermont,
+#     Virginia,
+#     Washington,
+#     West_Virginia,
+#     Wisconsin]
+
+#again for copy and paste purpose
+# [
+#     convert_cases_to_ratio(Alabama[:9], ALABAMA_POPULATION),
+#     convert_cases_to_ratio(Arizona[:9], ARIZONA_POPULATION),
+#     convert_cases_to_ratio(Arkansas[:9], ARKANSAS_POPULATION),
+#     convert_cases_to_ratio(California[:9], CALIFORNIA_POPULATION),
+#     convert_cases_to_ratio(Colorado[:9], COLORADO_POPULATION),
+#     convert_cases_to_ratio(Connecticut[:9], CONNECTICUT_POPULATION),
+#     convert_cases_to_ratio(Delaware[:9], DELAWARE_POPULATION),
+#     convert_cases_to_ratio(Florida[:9], FLORIDA_POPULATION),
+#     convert_cases_to_ratio(Georgia[:9], GEORGIA_POPULATION),
+#     convert_cases_to_ratio(Hawaii[:9], HAWAII_POPULATION),
+#     convert_cases_to_ratio(Idaho[:9], IDAHO_POPULATION),
+#     convert_cases_to_ratio(Illinois[:9], ILLINOIS_POPULATION),
+#     convert_cases_to_ratio(Indiana[:9], INDIANA_POPULATION),
+#     convert_cases_to_ratio(Iowa[:9], IOWA_POPULATION),
+#     convert_cases_to_ratio(Kansas[:9], KANSAS_POPULATION),
+#     convert_cases_to_ratio(Kentucky[:9], KENTUCKY_POPULATION),
+#     convert_cases_to_ratio(Louisiana[:9], LOUISIANA_POPULATION),
+#     convert_cases_to_ratio(Maine[:9], MAINE_POPULATION),
+#     convert_cases_to_ratio(Maryland[:9], MARYLAND_POPULATION),
+#     convert_cases_to_ratio(Massachusetts[:9], MASSACHUSETTS_POPULATION),
+#     convert_cases_to_ratio(Minnesota[:9], MINNESOTA_POPULATION),
+#     convert_cases_to_ratio(Mississippi[:9], MISSISSIPPI_POPULATION),
+#     convert_cases_to_ratio(Missouri[:9], MISSOURI_POPULATION),
+#     convert_cases_to_ratio(Nebraska[:9], NEBRASKA_POPULATION),
+#     convert_cases_to_ratio(Nevada[:9], NEVADA_POPULATION),
+#     convert_cases_to_ratio(New_Hampshire[:9], NEW_HAMPSHIRE_POPULATION),
+#     convert_cases_to_ratio(New_Jersey[:9], NEW_JERSEY_POPULATION),
+#     convert_cases_to_ratio(New_Mexico[:9], NEW_MEXICO_POPULATION),
+#     convert_cases_to_ratio(New_York[:9], NEW_YORK_POPULATION),
+#     convert_cases_to_ratio(North_Carolina[:9], NORTH_CAROLINA_POPULATION),
+#     convert_cases_to_ratio(North_Dakota[:9], NORTH_DAKOTA_POPULATION),
+#     convert_cases_to_ratio(Ohio[:9], OHIO_POPULATION),
+#     convert_cases_to_ratio(Oklahoma[:9], OKLAHOMA_POPULATION),
+#     convert_cases_to_ratio(Oregon[:9], OREGON_POPULATION),
+#     convert_cases_to_ratio(Pennsylvania[:9], PENNSYLVANIA_POPULATION),
+#     convert_cases_to_ratio(Rhode_Island[:9], RHODE_ISLAND_POPULATION),
+#     convert_cases_to_ratio(South_Carolina[:9], SOUTH_CAROLINA_POPULATION),
+#     convert_cases_to_ratio(Tennessee[:9], TENNESSEE_POPULATION),
+#     convert_cases_to_ratio(Texas[:9], TEXAS_POPULATION),
+#     convert_cases_to_ratio(Utah[:9], UTAH_POPULATION),
+#     convert_cases_to_ratio(Vermont[:9], VERMONT_POPULATION),
+#     convert_cases_to_ratio(Virginia[:9], VIRGINIA_POPULATION),
+#     convert_cases_to_ratio(Washington[:9], WASHINGTON_POPULATION),
+#     convert_cases_to_ratio(West_Virginia[:9], WEST_VIRGINIA_POPULATION),
+#     convert_cases_to_ratio(Wisconsin[:9], WISCONSIN_POPULATION)]
+
 ALABAMA_POPULATION = 4858979
 ALASKA_POPULATION = 738432
 ARIZONA_POPULATION = 6828065
@@ -78,14 +174,14 @@ Minnesota = [115, 137, 169, 235, 262, 287, 346, 398, 441, 503, 576, 629, 689, 74
 Mississippi = [140, 207, 249, 320, 377, 485, 579, 663, 758, 847, 937, 1073, 1177, 1358, 1455, 1638, 1738]
 Missouri = [183, 255, 356, 502, 670, 838, 903, 1031, 1327, 1581, 1834, 2113, 2291, 2367]
 Montana = [108, 147]
-Nebraska = [114, 135, 152, 179, 218, 264, 285, 321, 367]
+Nebraska = [113, 133, 149, 177, 215, 268, 292, 327, 370, 429]
 Nevada = [101, 109, 124, 154, 190, 278, 321, 420, 535, 621, 738, 996, 1113, 1279, 1458, 1514, 1742, 1836, 1953]
 New_Hampshire = [101, 108, 137, 158, 187, 214, 258, 314, 367, 415, 479, 540, 621, 669]
 New_Jersey = [178, 267, 427, 742, 890, 1327, 1914, 2844, 3675, 4402, 6876, 8825, 11124, 13866, 16636, 18696, 22259, 25590, 29895, 34124, 37505]
 New_Mexico = [100, 112, 136, 191, 208, 237, 281, 315, 363, 403, 495, 546, 627]
 New_York = [105, 142, 173, 216, 325, 421, 613, 729, 950, 1374, 2382, 4152, 7102, 10356, 15168, 20875, 25665, 30811, 37258, 44635, 52318, 59513, 66497, 75795, 83712, 92381, 102863, 113704, 122031, 130689]
 North_Carolina = [137, 184, 255, 297, 398, 504, 636, 763, 935, 1167, 1307, 1498, 1584, 1857, 2093, 2402]
-North_Dakota = [109, 126, 147, 159, 173, 186, 207]
+North_Dakota = [109, 126, 147, 159, 173, 186, 207, 225, 237, 251]
 Ohio = [119, 169, 247, 351, 442, 564, 704, 867, 1137, 1406, 1653, 1933, 2199, 2547, 2902, 3312, 3739, 4043, 4450]
 Oklahoma = [106, 164, 248, 322, 377, 429, 481, 565, 719, 879, 988, 1159, 1252, 1327]
 Oregon = [114, 137, 161, 191, 209, 266, 316, 414, 479, 548, 606, 690, 736, 826, 899, 999, 1068]
@@ -104,27 +200,16 @@ Wisconsin = [106, 155, 206, 281, 381, 416, 457, 585, 707, 842, 989, 1112, 1221, 
 Wyoming = [137, 153, 187]
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 def convert_cases_to_ratio(number_of_cases, population):
+    if type(number_of_cases) == int:
+        return number_of_cases / population
+
     for i in range(len(number_of_cases)):
-        number_of_cases[i] = number_of_cases / population
+        number_of_cases[i] = number_of_cases[i] / population
     return number_of_cases
 
 
-def get_prediction(A_matrix, b_vector, data_to_predict_with):
-
+def get_prediction(A_matrix, b_vector, data_to_predict_with, state_name, population, nth_day, actual_number):
     # Ax = b
     # x = ((A^t)(A))^-1 * A^t * b
 
@@ -134,32 +219,116 @@ def get_prediction(A_matrix, b_vector, data_to_predict_with):
     print("x_vector: ")
     print(x_vector)
 
-    prediction = data_to_predict_with.dot(x_vector)
-    print("prediction: ", prediction)
+    prediction_ratio = data_to_predict_with.dot(x_vector)
+    prediction_number = prediction_ratio * population
 
-#first we do a prediction for michigan. we will grab 9 days worth of data and try to predict the number of cases on the
-# 10th day using the data from all 45 states (all states excluding Michigan, Alaska, Montana, South Dakota and wyoming)
+    if actual_number == -1:
+        print("Prediction of number of Corona cases in " + state_name + " on " + str(nth_day) + "th day after exceeding 100:", prediction_number, "Actual number: ", actual_number)
+    else:
+        print("Prediction of number of Corona cases in " + state_name + " on " + str(nth_day) + "th day after exceeding 100:", prediction_number)
 
-michigan_vector = numpy.array(convert_cases_to_ratio([], MICHIGAN_POPULATION))
+# first we do a prediction for michigan. we will grab 9 days worth of data and try to predict the number of cases on the
+# 10th day using the data from all 44 states (all states excluding Michigan, Alaska, Montana, South Dakota and Wyoming)
 
-A_matrix = []
-b_vector = []
+michigan_vector = numpy.array(convert_cases_to_ratio(Michigan[:9], MICHIGAN_POPULATION))
 
-get_prediction(A_matrix, b_vector, michigan_vector)
+A_matrix = numpy.array([
+    convert_cases_to_ratio(Alabama[:9], ALABAMA_POPULATION),
+    convert_cases_to_ratio(Arizona[:9], ARIZONA_POPULATION),
+    convert_cases_to_ratio(Arkansas[:9], ARKANSAS_POPULATION),
+    convert_cases_to_ratio(California[:9], CALIFORNIA_POPULATION),
+    convert_cases_to_ratio(Colorado[:9], COLORADO_POPULATION),
+    convert_cases_to_ratio(Connecticut[:9], CONNECTICUT_POPULATION),
+    convert_cases_to_ratio(Delaware[:9], DELAWARE_POPULATION),
+    convert_cases_to_ratio(Florida[:9], FLORIDA_POPULATION),
+    convert_cases_to_ratio(Georgia[:9], GEORGIA_POPULATION),
+    convert_cases_to_ratio(Hawaii[:9], HAWAII_POPULATION),
+    convert_cases_to_ratio(Idaho[:9], IDAHO_POPULATION),
+    convert_cases_to_ratio(Illinois[:9], ILLINOIS_POPULATION),
+    convert_cases_to_ratio(Indiana[:9], INDIANA_POPULATION),
+    convert_cases_to_ratio(Iowa[:9], IOWA_POPULATION),
+    convert_cases_to_ratio(Kansas[:9], KANSAS_POPULATION),
+    convert_cases_to_ratio(Kentucky[:9], KENTUCKY_POPULATION),
+    convert_cases_to_ratio(Louisiana[:9], LOUISIANA_POPULATION),
+    convert_cases_to_ratio(Maine[:9], MAINE_POPULATION),
+    convert_cases_to_ratio(Maryland[:9], MARYLAND_POPULATION),
+    convert_cases_to_ratio(Massachusetts[:9], MASSACHUSETTS_POPULATION),
+    convert_cases_to_ratio(Minnesota[:9], MINNESOTA_POPULATION),
+    convert_cases_to_ratio(Mississippi[:9], MISSISSIPPI_POPULATION),
+    convert_cases_to_ratio(Missouri[:9], MISSOURI_POPULATION),
+    convert_cases_to_ratio(Nebraska[:9], NEBRASKA_POPULATION),
+    convert_cases_to_ratio(Nevada[:9], NEVADA_POPULATION),
+    convert_cases_to_ratio(New_Hampshire[:9], NEW_HAMPSHIRE_POPULATION),
+    convert_cases_to_ratio(New_Jersey[:9], NEW_JERSEY_POPULATION),
+    convert_cases_to_ratio(New_Mexico[:9], NEW_MEXICO_POPULATION),
+    convert_cases_to_ratio(New_York[:9], NEW_YORK_POPULATION),
+    convert_cases_to_ratio(North_Carolina[:9], NORTH_CAROLINA_POPULATION),
+    convert_cases_to_ratio(North_Dakota[:9], NORTH_DAKOTA_POPULATION),
+    convert_cases_to_ratio(Ohio[:9], OHIO_POPULATION),
+    convert_cases_to_ratio(Oklahoma[:9], OKLAHOMA_POPULATION),
+    convert_cases_to_ratio(Oregon[:9], OREGON_POPULATION),
+    convert_cases_to_ratio(Pennsylvania[:9], PENNSYLVANIA_POPULATION),
+    convert_cases_to_ratio(Rhode_Island[:9], RHODE_ISLAND_POPULATION),
+    convert_cases_to_ratio(South_Carolina[:9], SOUTH_CAROLINA_POPULATION),
+    convert_cases_to_ratio(Tennessee[:9], TENNESSEE_POPULATION),
+    convert_cases_to_ratio(Texas[:9], TEXAS_POPULATION),
+    convert_cases_to_ratio(Utah[:9], UTAH_POPULATION),
+    convert_cases_to_ratio(Vermont[:9], VERMONT_POPULATION),
+    convert_cases_to_ratio(Virginia[:9], VIRGINIA_POPULATION),
+    convert_cases_to_ratio(Washington[:9], WASHINGTON_POPULATION),
+    convert_cases_to_ratio(West_Virginia[:9], WEST_VIRGINIA_POPULATION),
+    convert_cases_to_ratio(Wisconsin[:9], WISCONSIN_POPULATION)])
 
+b_vector = numpy.array([
+    convert_cases_to_ratio(Alabama[9], ALABAMA_POPULATION),
+    convert_cases_to_ratio(Arizona[9], ARIZONA_POPULATION),
+    convert_cases_to_ratio(Arkansas[9], ARKANSAS_POPULATION),
+    convert_cases_to_ratio(California[9], CALIFORNIA_POPULATION),
+    convert_cases_to_ratio(Colorado[9], COLORADO_POPULATION),
+    convert_cases_to_ratio(Connecticut[9], CONNECTICUT_POPULATION),
+    convert_cases_to_ratio(Delaware[9], DELAWARE_POPULATION),
+    convert_cases_to_ratio(Florida[9], FLORIDA_POPULATION),
+    convert_cases_to_ratio(Georgia[9], GEORGIA_POPULATION),
+    convert_cases_to_ratio(Hawaii[9], HAWAII_POPULATION),
+    convert_cases_to_ratio(Idaho[9], IDAHO_POPULATION),
+    convert_cases_to_ratio(Illinois[9], ILLINOIS_POPULATION),
+    convert_cases_to_ratio(Indiana[9], INDIANA_POPULATION),
+    convert_cases_to_ratio(Iowa[9], IOWA_POPULATION),
+    convert_cases_to_ratio(Kansas[9], KANSAS_POPULATION),
+    convert_cases_to_ratio(Kentucky[9], KENTUCKY_POPULATION),
+    convert_cases_to_ratio(Louisiana[9], LOUISIANA_POPULATION),
+    convert_cases_to_ratio(Maine[9], MAINE_POPULATION),
+    convert_cases_to_ratio(Maryland[9], MARYLAND_POPULATION),
+    convert_cases_to_ratio(Massachusetts[9], MASSACHUSETTS_POPULATION),
+    convert_cases_to_ratio(Minnesota[9], MINNESOTA_POPULATION),
+    convert_cases_to_ratio(Mississippi[9], MISSISSIPPI_POPULATION),
+    convert_cases_to_ratio(Missouri[9], MISSOURI_POPULATION),
+    convert_cases_to_ratio(Nebraska[9], NEBRASKA_POPULATION),
+    convert_cases_to_ratio(Nevada[9], NEVADA_POPULATION),
+    convert_cases_to_ratio(New_Hampshire[9], NEW_HAMPSHIRE_POPULATION),
+    convert_cases_to_ratio(New_Jersey[9], NEW_JERSEY_POPULATION),
+    convert_cases_to_ratio(New_Mexico[9], NEW_MEXICO_POPULATION),
+    convert_cases_to_ratio(New_York[9], NEW_YORK_POPULATION),
+    convert_cases_to_ratio(North_Carolina[9], NORTH_CAROLINA_POPULATION),
+    convert_cases_to_ratio(North_Dakota[9], NORTH_DAKOTA_POPULATION),
+    convert_cases_to_ratio(Ohio[9], OHIO_POPULATION),
+    convert_cases_to_ratio(Oklahoma[9], OKLAHOMA_POPULATION),
+    convert_cases_to_ratio(Oregon[9], OREGON_POPULATION),
+    convert_cases_to_ratio(Pennsylvania[9], PENNSYLVANIA_POPULATION),
+    convert_cases_to_ratio(Rhode_Island[9], RHODE_ISLAND_POPULATION),
+    convert_cases_to_ratio(South_Carolina[9], SOUTH_CAROLINA_POPULATION),
+    convert_cases_to_ratio(Tennessee[9], TENNESSEE_POPULATION),
+    convert_cases_to_ratio(Texas[9], TEXAS_POPULATION),
+    convert_cases_to_ratio(Utah[9], UTAH_POPULATION),
+    convert_cases_to_ratio(Vermont[9], VERMONT_POPULATION),
+    convert_cases_to_ratio(Virginia[9], VIRGINIA_POPULATION),
+    convert_cases_to_ratio(Washington[9], WASHINGTON_POPULATION),
+    convert_cases_to_ratio(West_Virginia[9], WEST_VIRGINIA_POPULATION),
+    convert_cases_to_ratio(Wisconsin[9], WISCONSIN_POPULATION)])
 
+get_prediction(A_matrix, b_vector, michigan_vector, "Michigan", MICHIGAN_POPULATION, 10, Michigan[9])
 
-#then we do predictions for states that have very little amount of data: Alaska, Montana, South Dakota and wyoming.
+# then we do predictions for states that have very little amount of data: Alaska, Montana, South Dakota and wyoming.
 
-#Alaska:
-alaskan_vector = numpy.array(convert_cases_to_ratio([], ALASKA_POPULATION))
-
-
-
-
-
-
-
-
-
-
+# Alaska: get prediction for 10th day
+Alaskan_vector = numpy.array(convert_cases_to_ratio(Alaska[:9], MICHIGAN_POPULATION))
