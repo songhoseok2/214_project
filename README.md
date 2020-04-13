@@ -23,10 +23,26 @@ b_vector = numpy.array(get_nth_days_data(10))
 get_prediction(A_matrix, b_vector, michigan_vector, "Michigan", MICHIGAN_POPULATION, 10, Michigan[9])
 ```
 
-get_prediction is the function that calculates the least square solution (x*) according to the Theorem 5.4.6 in the textbook.
-![image of the least square matrix equation](https://github.com/songhoseok2/214_project/blob/master/Annotation%202020-04-13%20151014.png)
 
-after the test for the accuracy, we proceed to the calculation of the predicted number of COVID-19 cases on the 10th, 3rd, 6th and 4th day after the number exceeds 100 for Alaska, Montana, South Dakota and Wyoming repectively.
+## get_prediction
+
+get_prediction is the function that calculates the least square solution (x*) according to the Theorem 5.4.6 in the textbook.
+![image failed to load](https://github.com/songhoseok2/214_project/blob/master/Annotation%202020-04-13%20151014.png)
+
+the function calculates the predicted ratio of the COVID-19 pateients to the total population of the state, and computes the raw number of the patients by multiplying the ratio to the provided population.
+
+```
+AtA = ((A_matrix).transpose()).dot(A_matrix)
+    AtA_inverse = numpy.linalg.inv(AtA)
+    x_vector = (AtA_inverse.dot(A_matrix.transpose())).dot(b_vector)
+    print("x_vector: ")
+    print(x_vector)
+
+    prediction_ratio = data_to_predict_with.dot(x_vector)
+    prediction_number = prediction_ratio * population
+```
+
+after the test for the accuracy, we proceed to the calculation of the predicted number of COVID-19 cases on the 10th, 3rd, 6th and 4th day after the number exceeds 100 for Alaska, Montana, South Dakota and Wyoming repectively by feeding in the appropriate A matrices, b vectors and state populations into the get_prediction functions. The production of the A matrix and the b vector is shown in the codes of the script.
 
 
 
